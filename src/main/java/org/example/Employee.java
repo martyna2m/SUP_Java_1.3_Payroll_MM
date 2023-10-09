@@ -1,50 +1,50 @@
 package org.example;
 
-public class Employee {
+import java.util.Scanner;
 
-    private String firstName;
-    private String lastName;
+public class Employee extends Company {
 
-    private double salary;
+    public String firstName;
+    public String lastName;
+    public double salary;
 
 
     public Employee(String firstName, String lastName, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.salary = salary;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
-
-    public String getAllData() {
-        this.getFirstName();
-        this.getLastName();
-        this.getSalary();
-        return "Salary for " + this.firstName + this.lastName + "is " + this.salary;
+        allEmployees.add(this);
     }
 
 
+
+
+    @Override
+    public String toString() {
+        return "Employee: " +
+                "First Name = '" + firstName + '\'' +
+                ", Last Name = '" + lastName + '\'' +
+                ", Salary = " + salary + '\n'
+                ;
+    }
+
+    public static Employee addNewEmployee() {
+        Scanner scan = new Scanner(System.in);
+        printInstruction();
+        String firstName = scan.next();
+        String lastName = scan.next();
+        double salary = scan.nextDouble();
+        printSuccessInfo();
+        return new Employee(firstName, lastName, salary);
+
+
+    }
+    public static void printInstruction(){
+        System.out.println("Put First Name, Last Name, and Salary of an employee, eg. John Smith 6500");
+    }
+
+    public static void printSuccessInfo(){
+        System.out.println("Employee added successfully");
+    }
 }
 
