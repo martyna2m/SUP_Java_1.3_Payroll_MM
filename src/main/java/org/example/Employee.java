@@ -30,54 +30,32 @@ public class Employee extends Company {
     }
 
     public static void addEmployees() {
-        printInitialQuestion();
+        Program.printInitialQuestion();
         Scanner scan = new Scanner(System.in);
 
         int numberOfEmployees = scan.nextInt();
         for (int i = 0; i < numberOfEmployees; i++) {
-            printInstruction(i + 1);
+            Program.printInstruction(i + 1);
             String firstName = scan.next();
             String lastName = scan.next();
             double salary = scan.nextDouble();
-            printSuccessInfo(i + 1);
+            Program.printSuccessInfo(i + 1);
             new Employee(firstName, lastName, salary);
         }
 
     }
 
-    public static void addNewEmployee() {
+    public static void addSingleEmployee() {
         Scanner scan = new Scanner(System.in);
-        printSingleInstruction();
+        Program.printSingleInstruction();
         String firstName = scan.next();
         String lastName = scan.next();
         double salary = scan.nextDouble();
-        printSingleSuccessInfo();
+        Program.printSingleSuccessInfo();
         new Employee(firstName, lastName, salary);
 
     }
 
 
-    public static void printInitialQuestion() {
-        System.out.println("How many employees do you want to add at the start? E.g. 5");
-    }
-
-    public static void printInstruction(int employeeIndex) {
-        System.out.println("Put First Name, Last Name, and Salary($) of an employee nr " + employeeIndex + " , e.g. John Smith 6500");
-    }
-
-
-    public static void printSuccessInfo(int employeeIndex) {
-        System.out.println("Employee nr " + employeeIndex + " added successfully");
-    }
-
-
-    public static void printSingleInstruction() {
-        System.out.println("Put First Name, Last Name, and Salary($) of an employee, e.g. John Smith 6500");
-    }
-
-
-    public static void printSingleSuccessInfo() {
-        System.out.println("Employee added successfully");
-    }
 }
 
