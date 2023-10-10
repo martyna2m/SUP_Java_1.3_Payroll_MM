@@ -20,6 +20,7 @@ public class Employee extends Company {
         return salary;
     }
 
+
     @Override
     public String toString() {
         return "Employee: " +
@@ -36,11 +37,13 @@ public class Employee extends Company {
         int numberOfEmployees = scan.nextInt();
         for (int i = 0; i < numberOfEmployees; i++) {
             Program.printInstruction(i + 1);
+
             String firstName = scan.next();
             String lastName = scan.next();
             double salary = scan.nextDouble();
-            Program.printSuccessInfo(i + 1);
             new Employee(firstName, lastName, salary);
+
+            Program.printSuccessInfo(i + 1);
         }
 
     }
@@ -48,12 +51,13 @@ public class Employee extends Company {
     public static void addSingleEmployee() {
         Scanner scan = new Scanner(System.in);
         Program.printSingleInstruction();
+
         String firstName = scan.next();
         String lastName = scan.next();
         double salary = scan.nextDouble();
-        Program.printSingleSuccessInfo();
         new Employee(firstName, lastName, salary);
 
+        Program.printSingleSuccessInfo();
     }
 
 

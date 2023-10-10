@@ -16,7 +16,7 @@ public class Main {
         try {
             program.startPayrollProgram();
         } catch (Exception e) {
-            System.out.println("You can only choose an option from 1 to 4. Please start again.");
+            System.out.println("You can only choose a number from 1 to 4. Please start again.");
 
 
         }
