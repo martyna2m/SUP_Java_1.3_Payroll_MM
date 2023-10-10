@@ -1,16 +1,25 @@
 package org.example;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
+
         Program program = new Program();
 
-        program.startPayrollProgram();
+        try {
+            Employee.addEmployees();
+        } catch (Exception e) {
+            System.out.println("You can only choose an integer as an option. Please start again or use options from the menu.");
 
-        System.out.println(Company.allEmployees);
+        }
+
+        try {
+            program.startPayrollProgram();
+        } catch (Exception e) {
+            System.out.println("You can only choose an option from 1 to 4. Please start again.");
+
+
+        }
     }
 }
 
