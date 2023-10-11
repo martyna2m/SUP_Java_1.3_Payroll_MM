@@ -7,21 +7,28 @@ public class Program {
 
 
     public void startPayrollProgram() throws InputMismatchException {
-        Scanner scan = new Scanner(System.in);
+        try {
+            Scanner scan = new Scanner(System.in);
 
-        for (int i = 0; i < 1000000; i++) {
-            displayMenu();
-            int option = scan.nextInt();
-            switch (option) {
-                case 1 -> Employee.sumSalary();
-                case 2 -> Company.printAllEmployees();
-                case 3 -> Employee.addSingleEmployee();
-                case 4 -> {
-                    printClosingInfo();
-
-                    return;
+            for (int i = 0; i < 1000000; i++) {
+                displayMenu();
+                int option = scan.nextInt();
+                switch (option) {
+                    case 1 -> Employee.sumSalary();
+                    case 2 -> Company.printAllEmployees();
+                    case 3 -> {
+                        Employee.addSingleEmployee();
+                        printSingleSuccessInfo();
+                    }
+                    case 4 -> {
+                        printClosingInfo();
+                        return;
+                    }
                 }
             }
+        } catch (Exception e) {
+            printAlert();
+
         }
     }
 
@@ -36,33 +43,44 @@ public class Program {
                 4 – End program""");
     }
 
+    public static void printAlert() {
+        System.out.println("You can only choose a number as an option. Program closed, please start again.");
+    }
 
     public static void printInitialQuestion() {
         System.out.println("How many employees do you want to add at the start? E.g. 5");
     }
 
-    public static void printInstruction(int employeeIndex) {
-        System.out.println("Put First Name, Last Name, and Salary ($) of an employee nr " + employeeIndex + " , e.g. John Smith 6500");
+    public static void printEmployeeIndex(int employeeIndex) {
+        System.out.println("Create Employee nr " + employeeIndex);
     }
 
 
     public static void printSuccessInfo(int employeeIndex) {
-        System.out.println("Employee nr " + employeeIndex + " added successfully");
+        System.out.println("Employee nr " + employeeIndex + " added successfully" + "\n");
     }
 
 
-    public static void printSingleInstruction() {
-        System.out.println("Put First Name, Last Name, and Salary ($) of an employee, e.g. John Smith 6500");
+    public static void printNameInstruction() {
+        System.out.println("Put FIRST NAME of an employee, e.g. John");
+    }
+
+    public static void printLastNameInstruction() {
+        System.out.println("Put LAST NAME of an employee, e.g. Smith");
+    }
+
+    public static void printSalaryInstruction() {
+        System.out.println("Put SALARY ($) of an employee, e.g. 6500");
     }
 
 
     public static void printSingleSuccessInfo() {
-        System.out.println("Employee added successfully");
+        System.out.println("Employee added successfully.");
     }
 
 
     public void printClosingInfo() {
-        System.out.println("Program closed");
+        System.out.println("Program closed.");
     }
 
 }
