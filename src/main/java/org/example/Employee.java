@@ -62,7 +62,7 @@ public class Employee extends Company {
         Program.printNameInstruction();
         String firstName = scan.nextLine();
         while (firstName.isEmpty()) {
-            System.out.println("The value can't be null");
+            System.out.println("The value cannot be null");
             firstName = scan.nextLine();
         }
         employee.setFirstName(firstName);
