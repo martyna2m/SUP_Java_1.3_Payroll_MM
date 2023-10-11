@@ -70,7 +70,7 @@ public class Program {
     }
 
     public static void printSalaryInstruction() {
-        System.out.println("Put SALARY ($) of an employee, e.g. 6500");
+        System.out.println("Put SALARY of an employee, e.g. 6500");
     }
 
 

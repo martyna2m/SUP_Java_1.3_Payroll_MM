@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Employee extends Company {
-
     private String firstName;
     private String lastName;
     private double salary;
@@ -31,11 +30,7 @@ public class Employee extends Company {
 
     @Override
     public String toString() {
-        return "Employee: " +
-                "First Name = '" + firstName + '\'' +
-                ", Last Name = '" + lastName + '\'' +
-                ", Salary = " + salary + '\n'
-                ;
+        return "Salary for " + firstName + " " + lastName + " is " + salary + '\n';
     }
 
     public static void addEmployees() throws InputMismatchException {
@@ -50,7 +45,7 @@ public class Employee extends Company {
                 Program.printSuccessInfo(i + 1);
             }
         } catch (Exception e) {
-            System.out.println("You can only choose an integer as an option. Please start again or use options from the menu.");
+            System.out.println("You can only choose a number as an option. Please start again or use options from the menu.");
         }
     }
 
@@ -62,7 +57,7 @@ public class Employee extends Company {
         Program.printNameInstruction();
         String firstName = scan.nextLine();
         while (firstName.isEmpty()) {
-            System.out.println("The value cannot be null");
+            System.out.println("The value cannot be null.");
             firstName = scan.nextLine();
         }
         employee.setFirstName(firstName);
@@ -70,14 +65,14 @@ public class Employee extends Company {
         Program.printLastNameInstruction();
         String lastName = scan.nextLine();
         while (lastName.isEmpty()) {
-            System.out.println("The value can't be null");
+            System.out.println("The value cannot be null.");
             lastName = scan.nextLine();
         }
         employee.setLastName(lastName);
 
         Program.printSalaryInstruction();
         double salary = scan.nextDouble();
-        while (salary < 0) {
+        while (salary <= 0) {
             System.out.println("Salary must be grater than 0.");
             salary = scan.nextDouble();
         }
