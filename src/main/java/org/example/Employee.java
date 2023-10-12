@@ -73,7 +73,7 @@ public class Employee extends Company {
         Program.printSalaryInstruction();
         double salary = scan.nextDouble();
         while (salary <= 0) {
-            System.out.println("Salary must be grater than 0.");
+            System.out.println("Salary must be greater than 0.");
             salary = scan.nextDouble();
         }
         employee.setSalary(salary);
