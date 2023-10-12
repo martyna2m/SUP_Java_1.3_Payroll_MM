@@ -11,8 +11,8 @@ public class Company {
 
     public static void sumSalary() {
         double sum = 0;
-        for (Employee allEmployee : allEmployees) {
-            sum += allEmployee.getSalary();
+        for (Employee employee : allEmployees) {
+            sum += employee.getSalary();
         }
         System.out.println("Total salary of all employees = " + sum);
     }
