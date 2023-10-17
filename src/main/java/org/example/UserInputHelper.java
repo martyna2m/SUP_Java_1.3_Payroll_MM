@@ -1,6 +1,5 @@
 package org.example;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInputHelper {
@@ -38,7 +37,7 @@ public class UserInputHelper {
     }
 
 
-    public int getIntFromUser() throws InputMismatchException {
+    public int getIntFromUser() {
         boolean success = false;
         int intInput = 0;
         while (!success)
