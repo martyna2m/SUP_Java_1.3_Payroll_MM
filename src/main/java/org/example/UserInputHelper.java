@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class UserInputHelper {
@@ -28,11 +29,10 @@ public class UserInputHelper {
                     salaryInput = scan.nextDouble();
                 }
                 success = true;
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
                 System.out.println("Salary must be a number, e.g. 2500");
                 scan.nextLine();
             }
-
         return salaryInput;
     }
 
@@ -44,7 +44,7 @@ public class UserInputHelper {
             try {
                 intInput = scan.nextInt();
                 success = true;
-            } catch (Exception e) {
+            } catch (InputMismatchException e) {
                 MenuHelper.printAlert();
                 scan.nextLine();
             }
