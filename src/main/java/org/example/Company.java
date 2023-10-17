@@ -3,13 +3,19 @@ package org.example;
 import java.util.ArrayList;
 
 public class Company {
-    public static ArrayList<Employee> allEmployees = new ArrayList<>();
+    private ArrayList<Employee> allEmployees = new ArrayList<>();
 
-    public static void printAllEmployees() {
-        System.out.println(Company.allEmployees);
+
+    public void addEmployeeToList(Employee employee) {
+        allEmployees.add(employee);
     }
 
-    public static void sumSalary() {
+    public void printAllEmployees() {
+        System.out.println(allEmployees);
+    }
+
+
+    public void printTotalSalary() {
         double sum = 0;
         for (Employee employee : allEmployees) {
             sum += employee.getSalary();
@@ -17,6 +23,4 @@ public class Company {
         System.out.println("Total salary of all employees = " + sum);
     }
 }
-
-
 
