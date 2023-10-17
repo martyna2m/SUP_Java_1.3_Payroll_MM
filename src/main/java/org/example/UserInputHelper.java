@@ -16,6 +16,7 @@ public class UserInputHelper {
         return textInput;
     }
 
+
     public double getSalaryFromUser() {
         boolean success = false;
         double salaryInput = 0;
